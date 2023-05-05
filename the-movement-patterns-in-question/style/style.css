@@ -1,3 +1,12 @@
+html {
+  background: linear-gradient(
+    50deg,
+    rgba(70, 70, 83, 1) 0%,
+    rgba(91, 91, 103, 1) 16%,
+    rgba(132, 143, 145, 1) 100%
+  );
+}
+
 .flexCont {
   display: flex;
 }
