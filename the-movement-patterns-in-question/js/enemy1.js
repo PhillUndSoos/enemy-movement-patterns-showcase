@@ -1,3 +1,5 @@
+//No documentation in this one so far. look at "https://github.com/PhillUndSoos/enemy-movement-patterns" for documented code
+
 /** @type {HTMLCanvasElement} */
 
 const canvas = document.getElementById('canvas1');
