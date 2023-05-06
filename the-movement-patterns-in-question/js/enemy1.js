@@ -93,8 +93,6 @@ const enemiesArray2 = [];
 
 const enemyImage2 = new Image();
 
-let gameFrame2 = 0;
-
 
 class Enemy2 {
     constructor() {
@@ -134,7 +132,7 @@ class Enemy2 {
             this.x = canvas2.width
         }
 
-        if (gameFrame2 % this.spriteAnimationSpeed === 0) {
+        if (gameFrame % this.spriteAnimationSpeed === 0) {
             this.frame > 4 ? this.frame = 0 : this.frame++;
         }
         
@@ -158,7 +156,6 @@ function animate2() {
         enemy.draw2();
     });
 
-    gameFrame2++;
 
     requestAnimationFrame(animate2);
 }
@@ -178,7 +175,6 @@ const enemiesArray3 = [];
 
 const enemyImage3 = new Image();
 
-let gameFrame3 = 0;
 
 
 class Enemy3 {
@@ -219,7 +215,7 @@ class Enemy3 {
             this.x = canvas3.width
         }
 
-        if (gameFrame3 % this.spriteAnimationSpeed === 0) {
+        if (gameFrame % this.spriteAnimationSpeed === 0) {
             this.frame > 4 ? this.frame = 0 : this.frame++;
         }
         
@@ -243,8 +239,6 @@ function animate3() {
         enemy.draw3();
     });
 
-    gameFrame3++;
-
     requestAnimationFrame(animate3);
 }
 animate3()
@@ -267,7 +261,6 @@ const enemiesArray4 = [];
 
 const enemyImage4 = new Image();
 
-let gameFrame4 = 0;
 
 
 //Factory for enemy objects
@@ -298,7 +291,7 @@ class Enemy4 {
     }
 
     update4() {
-        if (gameFrame4 % this.locationChangeInterval === 0) {
+        if (gameFrame % this.locationChangeInterval === 0) {
             this.newX = Math.random() * (canvas4.width - this.width );
             this.newY = Math.random() * (canvas4.height - this.height);
         }
@@ -313,7 +306,7 @@ class Enemy4 {
             this.x = canvas4.width
         }
 
-        if (gameFrame4 % this.spriteAnimationSpeed === 0) {
+        if (gameFrame % this.spriteAnimationSpeed === 0) {
             this.frame > 4 ? this.frame = 0 : this.frame++;
         }
         
@@ -340,10 +333,6 @@ function animate4() {
         enemy.update4();
         enemy.draw4();
     });
-
-
-    gameFrame4++;
-
 
     requestAnimationFrame(animate4);
 }
