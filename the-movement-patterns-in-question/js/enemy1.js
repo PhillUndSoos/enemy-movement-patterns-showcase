@@ -13,9 +13,6 @@ const amountOfEnemys = 10;
 
 const enemiesArray = [];
 
-
-const enemyImage1 = new Image();
-
 let gameFrame = 0;
 
 
@@ -121,7 +118,8 @@ class Enemy2 {
         this.curve = Math.random() * 8
 
     }
-    update2() {
+    
+    update() {
         this.x -= this.speed;
 
         this.y += this.curve * Math.sin(this.angle);
@@ -139,7 +137,7 @@ class Enemy2 {
         
     }
 
-    draw2() {
+    draw() {
         ctx2.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height)
     }
 }
@@ -152,8 +150,8 @@ function animate2() {
     ctx2.clearRect(0, 0, canvas2_WIDTH, canvas2_HEIGHT);
 
     enemiesArray2.forEach(enemy => {
-        enemy.update2();
-        enemy.draw2();
+        enemy.update();
+        enemy.draw();
     });
 
 
