@@ -15,14 +15,9 @@ const ctx3 = canvas3.getContext('2d');
 const ctx4 = canvas4.getContext('2d');
 
 //gives reference to canvas dimension in pixels
-CANVAS_WIDTH = canvas1.width = 450;
-CANVAS_HEIGHT = canvas1.height = 900;
-canvas2.width = 450;
-canvas2.height = 900;
-canvas3.width = 450;
-canvas3.height = 900;
-canvas4.width = 450;
-canvas4.height = 900;
+CANVAS_WIDTH = canvas1.width = canvas2.width = canvas3.width = canvas4.width = 450;
+CANVAS_HEIGHT = canvas1.height = canvas2.height = canvas3.height = canvas4.height = 900;
+
 //sets the amount of enemys for each type
 const amountOfEnemys1 = 9;
 const amountOfEnemys2 = 9;
@@ -34,6 +29,7 @@ const enemiesArray1 = [];
 const enemiesArray2 = [];
 const enemiesArray3 = [];
 const enemiesArray4 = [];
+const allEnemiesArray = [enemiesArray1, enemiesArray2, enemiesArray3, enemiesArray4]
 
 //counts every frame
 let gameFrame = 0;
@@ -257,7 +253,7 @@ class Enemy4 {
 
 //a loop that loops amountOfEnemys'th times and creates a new instance of an enemy object and pushes it into enemiesArray for each iteration
 for (let i = 0; i < amountOfEnemys1; i++) {
-    enemiesArray1.push(new Enemy1());
+     enemiesArray1.push(new Enemy1());
 }
 
 for (let i = 0; i < amountOfEnemys2; i++) {
@@ -269,7 +265,7 @@ for (let i = 0; i < amountOfEnemys3; i++) {
 }
 
 for (let i = 0; i < amountOfEnemys4; i++) {
-    enemiesArray1.push(new Enemy4());
+    enemiesArray4.push(new Enemy4());
 }
 
 
@@ -279,7 +275,7 @@ function animate() {
     ctx3.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx4.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-    enemiesArray1.forEach(enemy => {
+    allEnemiesArray[0].forEach(enemy => {
         enemy.update();
         enemy.draw();
     });
